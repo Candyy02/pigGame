@@ -3,6 +3,7 @@ alert(
   'Luật chơi như sau: \n Mỗi người chơi có quyền Roll hoặc Hold. Nếu ai Roll trúng số 1 thì sẽ điểm sẽ về 0. Ai chạm mốc 100 điểm trước thì sẽ thắng. \n Chúc bạn may mắn.'
 );
 const resetBtn = document.querySelector('.btn--new');
+console.log(resetBtn);
 const rollDiceBtn = document.querySelector('.btn--roll');
 const holdBtn = document.querySelector('.btn--hold');
 const diceImg = document.querySelector('.dice');
@@ -81,15 +82,14 @@ holdBtn.addEventListener('click', () => {
   changePlayer();
 });
 const reset = () => {
-  if (player == 2) changePlayer();
+  if (player === 2) changePlayer();
   player1Sum = 0;
   curPlayer1Sum = 0;
   player2Sum = 0;
   curPlayer2Sum = 0;
-  if (player == 2) changePlayer();
   score1.textContent = 0;
   score2.textContent = 0;
   curScore1.textContent = 0;
   curScore2.textContent = 0;
 };
-resetBtn.addEventListener('click'.reset);
+resetBtn.addEventListener('click', reset);
